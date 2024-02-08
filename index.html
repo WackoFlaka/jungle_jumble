@@ -17,34 +17,61 @@
 
 <body>
   <!-- SECTION -->
-  <header>
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light px-2">
-      <a class="navbar-brand" href="#">
-        <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
-          loading="lazy">
-        <span class="ml-2">jungle_jumble</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <!-- NAVLINKS -->
-          <a href="#/about" class="nav-link">About</a>
-        </div>
-      </div>
-      <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
-    </nav>
+  <header class="d-flex px-5">
+    <h1 class="bg bg-white p-2 text-warning">Jungle Jumble</h1>
   </header>
 
   <!-- SECTION -->
   <main>
-
-    <section id="router-view">
-      <!-- primary viewport -->
+    <section class="container-fluid">
+      <div class="row justify-content-evenly h-100">
+        <!-- NOTE text area / typing -->
+        <div class="col-7">
+          <div class="card p-4">
+            <div class="d-flex justify-content-between p-4">
+              <h2>Easy Jumble</h2>
+              <h2>Fastest Time 0s</h2>
+            </div>
+          
+             
+            <div id="activeRecord" class="playBox">
+              
+            </div>
+          
+          </div>
+          <div class="card p-4 mt-5">
+            
+            
+            <!-- ANCHOR -->
+            <form onsubmit="app.gameController.submitGame()" class="d-flex flex-column">
+              <textarea name="body" id="userInput" cols="30" rows="10" onblur="app.gameController.userInput()"></textarea>
+              <button type="submit" class="p-2">Submit</button>
+            </form>
+          </div>
+        </div>
+        
+        <!-- FORM / Records -->
+        <div class="col-4">
+          <div class="card h-100 p-0 justify-content-evenly">
+            <h2 class="text-center pt-4 bg bg-white">Jumble!</h2>
+            <div class="d-flex flex-column">
+              <div id="records" class="row pt-3" style="overflow-y: auto;"></div>
+          
+          <div>
+          <h3 class="p-3">Create Jumble</h3>
+          <form class="p-3" onsubmit="app.JumbleController.createJumble()">
+            <input type="text" name="name" placeholder="Name" style="width: 100%;" class="mb-2"> <br>
+            <textarea name="body" id="" cols="30" rows="10" style="width: 100%;" placeholder="Message"></textarea>
+            <button type="submit" class="btn btn-warning" style="width: 100%">create +</button>
+          </form>
+            </div>
+          </div>
+          
+          
+        </div>
+        </div>
+      </div>
     </section>
-
   </main>
 
   <!-- SECTION -->
